@@ -21,7 +21,7 @@ namespace EntityFramework_Slider.Services
         public async Task<Product> GetById(int id) =>  await _context.Products.FindAsync(id);
 
 
-        public async Task<Product> GetFullDataById() =>  await _context.Products.Include(m => m.Images).Include(m => m.Category).FirstOrDefaultAsync(m => m.Id == Id);
+        public async Task<Product> GetFullDataById(int id) =>  await _context.Products.Include(m => m.Images).Include(m => m.Category).FirstOrDefaultAsync(m => m.Id == id);
         
     }
 }
